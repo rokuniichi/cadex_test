@@ -1,6 +1,6 @@
 # Cadex test assignment
 
-![Game screenshot](https://imgur.com/mzcEE9d.png)
+![Company logo](https://imgur.com/mzcEE9d.png)
 ## About
 ### Design a small program in C++ that would implement support of 3D curves hierarchy.
 1. Support a few types of 3D geometric curves – circles, ellipses and 3D helixes. (Simplified
