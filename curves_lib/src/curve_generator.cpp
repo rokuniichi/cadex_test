@@ -1,5 +1,3 @@
-#include <random>
-
 #include "curves_lib/curve_generator.h"
 #include "curves_lib/vector3d.h"
 #include "curves_lib/circle.h"

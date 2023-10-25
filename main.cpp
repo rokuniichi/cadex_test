@@ -7,8 +7,6 @@
 
 #include <curves_lib/curve_generator.h>
 #include <curves_lib/circle.h>
-#include <curves_lib/ellipse.h>
-#include <curves_lib/helix.h>
 
 int main()
 {
