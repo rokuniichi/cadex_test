@@ -12,13 +12,13 @@ CurveGenerator::CurveGenerator()
 	engine = std::mt19937(random_device());
 }
  
-int CurveGenerator::GenerateRandomInteger(int min, int max)
+int CurveGenerator::GenerateRandomInteger(const int min, const int max)
 {
 	std::uniform_int_distribution<> intDist = std::uniform_int_distribution<>(min, max);
 	return intDist(engine);
 }
 
-std::vector<std::shared_ptr<Curve>> CurveGenerator::GenerateRandomCurves(int count, double min, double max)
+std::vector<std::shared_ptr<Curve>> CurveGenerator::GenerateRandomCurves(const int count, const double min, const double max)
 {
 	std::uniform_real_distribution<> realDist = std::uniform_real_distribution<>(min, max);
 	std::vector<std::shared_ptr<Curve>> result;

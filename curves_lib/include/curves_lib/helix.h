@@ -8,10 +8,10 @@ public:
 	const double radius, step;
 	const Vector3D center;
 
-	Helix(double radius, double step);
-	Helix(double radius, double step, Vector3D center);
+	Helix(const double radius, const double step);
+	Helix(const double radius, const double step, const Vector3D center);
 
-	Vector3D GetPoint(double t) const override;
-	Vector3D GetFirstDerivative(double t) const override;
+	Vector3D GetPoint(const double t) const override;
+	Vector3D GetFirstDerivative(const double t) const override;
 	std::ostream& Print(std::ostream& out) override;	
 };

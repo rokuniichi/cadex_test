@@ -22,7 +22,7 @@ int main()
 	std::vector<std::shared_ptr<Curve>> curves = cg.GenerateRandomCurves(count, 0.1, 1.0);
 	std::vector<std::shared_ptr<Circle>> circles;
 
-	for (const std::shared_ptr<Curve> &curve : curves) 
+	for (const std::shared_ptr<Curve>& curve : curves) 
 	{
 		if (std::shared_ptr<Circle> circle = std::dynamic_pointer_cast<Circle>(curve))
 		{
@@ -36,17 +36,17 @@ int main()
 	}
 
 	std::cout << "Unsorted circles radii: ";
-	for (const std::shared_ptr<Circle> &circle : circles)
+	for (const std::shared_ptr<Circle>& circle : circles)
 	{
 		std::cout << circle->radius << " ";
 	}
 	std::cout << std::endl;
-	std::sort(circles.begin(), circles.end(), [](const std::shared_ptr<Circle> &a, const std::shared_ptr<Circle> &b) 
+	std::sort(circles.begin(), circles.end(), [](const std::shared_ptr<Circle>& a, const std::shared_ptr<Circle>& b)
 		{
 			return a->radius < b->radius;
 		});
 	std::cout << "Sorted circles radii: ";
-	for (const std::shared_ptr<Circle> &circle : circles)
+	for (const std::shared_ptr<Circle>& circle : circles)
 	{
 		std::cout << circle->radius << " ";
 	}
