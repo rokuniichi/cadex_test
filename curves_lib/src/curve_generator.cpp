@@ -5,17 +5,11 @@
 #include "curves_lib/helix.h"
 
 #include <iostream>
-
-CurveGenerator::CurveGenerator()
-{
-	std::random_device random_device{};
-	engine = std::mt19937(random_device());
-}
  
 int CurveGenerator::GenerateRandomInteger(const int min, const int max)
 {
 	std::uniform_int_distribution<> intDist = std::uniform_int_distribution<>(min, max);
-	return intDist(engine);
+	return intDist(seed);
 }
 
 std::vector<std::shared_ptr<Curve>> CurveGenerator::GenerateRandomCurves(const int count, const double min, const double max)
@@ -29,16 +23,16 @@ std::vector<std::shared_ptr<Curve>> CurveGenerator::GenerateRandomCurves(const i
 		switch (GenerateRandomInteger(circle, helix))
 		{
 		case circle:
-			result.push_back(std::make_shared<Circle>(realDist(engine), Vector3D(realDist(engine), realDist(engine))));
+			result.push_back(std::make_shared<Circle>(realDist(seed), Vector3D(realDist(seed), realDist(seed))));
 			break;
 		case ellipse:
-			result.push_back(std::make_shared<Ellipse>(realDist(engine), realDist(engine), Vector3D(realDist(engine), realDist(engine))));
+			result.push_back(std::make_shared<Ellipse>(realDist(seed), realDist(seed), Vector3D(realDist(seed), realDist(seed))));
 			break;
 		case helix:
-			result.push_back(std::make_shared<Helix>(realDist(engine), realDist(engine), Vector3D(realDist(engine), realDist(engine), realDist(engine))));
+			result.push_back(std::make_shared<Helix>(realDist(seed), realDist(seed), Vector3D(realDist(seed), realDist(seed), realDist(seed))));
 			break;
 		default:
-			result.push_back(std::make_shared<Circle>(realDist(engine)));
+			result.push_back(std::make_shared<Circle>(realDist(seed)));
 			break;
 		}
 	}

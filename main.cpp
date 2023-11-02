@@ -11,7 +11,7 @@
 int main()
 {
 	const double t = M_PI / 4;
-	CurveGenerator cg = CurveGenerator();
+	CurveGenerator cg;
 	const int count = cg.GenerateRandomInteger(5, 10);
 
 	std::cout << std::setprecision(4) << std::fixed;
